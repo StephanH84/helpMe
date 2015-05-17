@@ -11,4 +11,6 @@ public interface QuestionDAO {
     public List<Question> list();
      
     public Question findById(int id);
+    
+	public List<Question> listByCategoryId(int id);
 }

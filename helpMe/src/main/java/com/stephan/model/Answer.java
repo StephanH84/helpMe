@@ -9,6 +9,7 @@ import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
@@ -29,7 +30,7 @@ public class Answer extends NamedEntity {
     @Column(name = "VOTES")
 	private Integer votes;
 	
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(
           name="Answer_Category",
           joinColumns=@JoinColumn(name="answerId")

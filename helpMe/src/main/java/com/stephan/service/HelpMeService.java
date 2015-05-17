@@ -14,7 +14,9 @@ public interface HelpMeService {
 	
 	Collection<Category> listAllCategories();
 	
-	Collection<Question> getAllQuestionsByCategory(Category category);
+	void deleteCategory(int id);
+	
+	Collection<Question> getAllQuestionsByCategory(int id);
 	
 	Collection<Category> getSubcategories(Category category);
 	
@@ -33,5 +35,7 @@ public interface HelpMeService {
 	void addCategoryToQuestion(Question question, Category category);
 	
 	void searchForQuestion(String query);
+	
+	Question getQuestionById(int id);
 	
 }

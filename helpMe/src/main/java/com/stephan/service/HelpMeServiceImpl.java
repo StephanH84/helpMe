@@ -38,10 +38,12 @@ public class HelpMeServiceImpl implements HelpMeService {
 		return categoryDAO.list();
 	}
 
-	public Collection<Question> getAllQuestionsByCategory(Category category)
-			 {
-		// TODO Auto-generated method stub
-		return null;
+	public void deleteCategory(int id) {
+		categoryDAO.delete(id);
+	}
+	
+	public Collection<Question> getAllQuestionsByCategory(int id) {
+		return questionDAO.listByCategoryId(id);
 	}
 
 	public Collection<Category> getSubcategories(Category category)
@@ -87,5 +89,10 @@ public class HelpMeServiceImpl implements HelpMeService {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public Question getQuestionById(int id) {
+		return questionDAO.findById(id);
+	}
+
 
 }
